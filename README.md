@@ -3,7 +3,7 @@
 Simulation code for:
 
 > **Active Inference as a Normative Framework for Adaptive CT Acquisition**  
-> [Authors], *Physics in Medicine and Biology*, 2025  
+> [Authors], *Physics in Medicine and Biology*, 2026  
 > DOI: [to be added on acceptance]
 
 ---
