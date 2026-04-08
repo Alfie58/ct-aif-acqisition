@@ -1,7 +1,7 @@
 """
 bayes_aif_sensitivity.py
 ========================
-Hyperparameter sensitivity analysis for:
+weighting parameters sensitivity analysis for:
 
   "Active Inference as a Normative Framework for Adaptive CT Acquisition"
   Physics in Medicine and Biology, 2025.
