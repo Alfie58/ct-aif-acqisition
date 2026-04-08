@@ -1,3 +1,5 @@
+# CT-AI-Project
+
 This repository contains simulation code for CT active inference dose control.
 
 For the full technical README with equations (PDF), see:
