@@ -2,7 +2,7 @@
 
 Simulation code accompanying:
 
-**Coleman A J (2025)**. Active Inference as a Normative Framework for Adaptive CT Acquisition. *Physics in Medicine and Biology* (under review).
+Active Inference as a Normative Framework for Adaptive CT Acquisition. *Physics in Medicine and Biology* (under review).
 
 ---
 
@@ -24,6 +24,7 @@ The five controllers are:
 |------|-------------|
 | `bayes_aif_v1.py` | Main simulation — nonlinear and linearised benchmark, n=400 trials |
 | `pmb_three_figures.py` | Generates paper figures from summary CSVs |
+| `bayes_aif_cross_condition.py` | Cross-condition experiment — decomposes the model gap into measurement and inference effects |
 | `bayes_aif_sensitivity.py` | Hyperparameter sensitivity screen — 3×3 grid at n=20 trials |
 | `bayes_aif_sensitivity_n100.py` | Sensitivity confirmation — lambda=0.06 column at n=100 trials |
 
@@ -78,6 +79,24 @@ Reads the CSV files produced by the main benchmark and writes two figures:
 - `figures/fig1_planning_horizon.png` — task success and dose vs planning horizon
 - `figures/fig3_benchmark_bars.png` — task success by controller and model
 
+### Cross-condition experiment
+
+```bash
+python bayes_aif_cross_condition.py
+```
+
+Runs three conditions to decompose the performance gap between the nonlinear and linearised models:
+
+| Condition | Data | Controller | Purpose |
+|-----------|------|------------|---------|
+| A | Nonlinear (Poisson) | Nonlinear | Matched — main result |
+| B | Linearised | Linearised | Matched — linear baseline |
+| C | Nonlinear (Poisson) | Linearised | Diagnostic — misspecified controller |
+
+Comparing A, B, and C separates the contribution of Poisson measurement statistics (C minus B) from the contribution of correct likelihood inference (A minus C). Results are reported in Table 3 of the paper.
+
+**Runtime:** approximately 3--4 hours at n=100 trials.
+
 ### Hyperparameter sensitivity
 
 **Quick screen across the full 3x3 grid (n=20 per condition):**
@@ -126,7 +145,7 @@ The code variable names differ from the paper's mathematical notation in two pla
 
 ```bibtex
 @article{Coleman2025AIFCTAcquisition,
-  author  = {Coleman, Andrew J.},
+  author  = {},
   title   = {Active Inference as a Normative Framework for
              Adaptive {CT} Acquisition},
   journal = {Physics in Medicine and Biology},
@@ -138,4 +157,5 @@ The code variable names differ from the paper's mathematical notation in two pla
 
 ## Licence
 
+MIT Licence.
 MIT Licence.
